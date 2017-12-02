@@ -1,0 +1,53 @@
+.top-card {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 5px;
+    
+}
+
+.ongoing {
+    vertical-align: middle;
+    width: 75%;
+    margin: 0 auto;
+    
+}
+.ongoing-number {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 35px;
+    border-style: none;
+    border-radius: 100%;
+    width: auto;
+    padding: 0 15px;
+   // height: 50px;
+    margin-left: 15px;
+    
+
+}
+
+.ongoing-title {
+    display: inline-block;
+
+}
+
+.scroll-content {
+    padding: 0px !important;
+}
+
+.tender-title {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.tender-card {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.tender-val {
+    display: inline-block;
+    margin-left: 7%;
+}

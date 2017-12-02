@@ -1,0 +1,36 @@
+.assigned_title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.assigned_item {
+    font-size: 1.2em;
+    font-weight: 500;
+    width: 250px;
+}
+
+.ass_header {
+    background-color:color($colors,primary);
+}
+
+.ass_cont {
+    background-color: color($colors,light);
+   
+}
+
+.t-date{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 2px;
+    margin: 2px;
+}
+
+.t-progress {
+    text-align: center;
+}
+
+.t-time {
+    margin-bottom: 10px;
+}

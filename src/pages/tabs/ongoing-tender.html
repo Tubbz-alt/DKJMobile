@@ -1,0 +1,57 @@
+<ion-content >
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-card class="top-card" color="dark" >
+        <ion-card-content>
+            <div class="ongoing">
+                <div class="ongoing-title"><h1 float-left >Ongoing Tenders </h1></div>            
+                <div class="ongoing-number"> {{ongoing }}</div>
+            </div>
+            
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngFor="let tender of tenders">
+            <ion-card-content class="tender-card">
+                <ion-grid>
+                    <ion-row>
+                            <ion-col>
+                                    <div text-uppercase class="tender-title"> {{ tender.tenderName }} </div>
+                            </ion-col>           
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-3>
+                            <div float-left>Budget : </div>                          
+                        </ion-col>
+                        <ion-col>
+                                <div class="tender-val">{{ tender.estimatedCost }}</div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                            <ion-col col-3>
+                                 <div float-left>Grade : </div>
+                            </ion-col>
+                            <ion-col>
+                                <div class="tender-val">{{ tender.grade}}</div>
+                            </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-3>
+                            <div float-left>Duration : </div>
+                        </ion-col>
+                        <ion-col col-9>
+                            <div class="tender-val">{{ tender.period }} Days</div>
+                        </ion-col>                      
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <button ion-button  block  outline (click)="itemTapped($event, tender)" >View Assigned Jobs</button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+    </ion-card>
+  
+   
+   </ion-content>

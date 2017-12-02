@@ -1,0 +1,12 @@
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+        <ion-icon name="construct" item-left></ion-icon>
+      {{item.tenderName}}
+    </button>
+  </ion-list>
+
+</ion-content>

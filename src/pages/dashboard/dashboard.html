@@ -1,0 +1,64 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-card>
+      <ion-card-header>
+       Overall Tenders Count
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Yearly Utilities Cost
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Monthly Utilities Cost
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <select [(ngModel)]="this.selectedYear" (ngModelChange)="selectMonth($event)">
+                    <option *ngFor="let y of this.utilitiesYear" [ngValue]="y.year">{{ y.year }}</option>
+                  </select>
+            </ion-col>
+            <ion-col>
+                <select [(ngModel)]="this.selectedMonth" (ngModelChange)="getTypeCost()">
+                    <option *ngFor="let y of this.utilitiesYearMonth" [ngValue]="y.month">{{ y.month }}</option>
+                  </select>
+            </ion-col>
+            
+           
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <canvas #pieCanvas></canvas>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+      </ion-card-content>
+    </ion-card>
+   
+</ion-content>

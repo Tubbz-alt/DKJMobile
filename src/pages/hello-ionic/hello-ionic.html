@@ -1,25 +1,20 @@
-<ion-header>
-  <ion-navbar>
+<ion-header >
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>Tender</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
-  <h3>Welcome to your first Ionic app!</h3>
+  <ion-tabs tabsLayout="icon-top">
+    <ion-tab [root]="tab1Root" tabTitle="Ongoing Tender" tabIcon="cog" ></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Tender Summary" tabIcon="filing"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Summary" tabIcon="filing"></ion-tab>
+  </ion-tabs>
 
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
-
+  
 </ion-content>

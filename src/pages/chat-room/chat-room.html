@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{this.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<script>window.scrollTo(0,document.querySelector(".msg-container").scrollHeight);</script>
+
+<ion-content padding>
+  <div #scroll [scrollTop]="scroll.scrollHeight" class="msg-container">
+        <div *ngFor = "let msg of prevMessages" > 
+          
+           <div *ngIf = "msg.sender == 'boss'" >
+            <div class='message right'><div class='message-text'>{{ msg.message }}</div></div>
+                  
+            </div> 
+          
+            <div *ngIf = "msg.sender == this.name" class="">
+                <div class='message left'><div class='message-text'>{{ msg.message }}</div></div>
+          </div> 
+          
+        </div>    
+      <div *ngFor = "let msg of messages" >  
+          <div *ngIf = "msg.sender == 'boss'" >
+              <div class='message right'><div class='message-text'>{{ msg.messages }}</div></div>
+                    
+              </div> 
+            
+              <div *ngIf = "msg.sender == this.name" class="">
+                  <div class='message left'><div class='message-text'>{{ msg.messages }}</div></div>
+            </div>   
+      </div>
+   </div>
+      <div class="send-container">     
+          <input type="text" class="send-input" [(ngModel)]="this.message">
+          <button ion-button class="send-btnn" [disabled]="this.message === ''" (click)="sendMessages()">
+              <ion-icon md="ios-arrow-forward"></ion-icon>
+          </button>
+        </div>
+
+  
+</ion-content>
